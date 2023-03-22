@@ -2,27 +2,31 @@ package example.project;
 
 import example.project.domain.Scenario;
 import example.project.domain.SimulationResult;
+import example.project.domain.Snapshot;
 
 public class Simulator {
-    String simulatorBinPath;
-
-    public Simulator(String simulatorBinPath) {
-        this.simulatorBinPath = simulatorBinPath;
-    }
 
     /**
-     * Execute the simulator binary for a given scenario and get the simulation result.
+     * Compute the next snapshot (status) of the simulated world based on the current snapshot and the driving command from the ADS.
      *
-     * @param scenario the driving scenario to run
-     * @return simulation result (i.e., series of the snapshots of the simulated world)
+     * @param snapshot_curr
+     * @param command
+     * @return
      */
-    SimulationResult run(Scenario scenario) {
-        System.out.println("WARNING: Simulator.run() is not yet implemented.");
-        return null;
-    }
+    Snapshot next(Snapshot snapshot_curr, String command) {
+        Snapshot snapshot_next = new Snapshot();
+        snapshot_next.roadType = snapshot_curr.roadType;
+        snapshot_next.weatherCondition = snapshot_curr.weatherCondition;
 
-    SimulationResult run(Scenario scenario, ADS ads) {
-        System.out.println("WARNING: Simulator.run() is not yet implemented.");
-        return null;
+        if (command.equals("left")) {
+
+        } else if (command.equals("right")) {
+
+        } else if (command.equals("straight")) {
+
+        } else {
+            System.err.printf("Unknown driving command: %s", command);
+        }
+        return snapshot_next;
     }
 }
