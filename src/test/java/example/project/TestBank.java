@@ -56,8 +56,11 @@ public class TestBank {
 
     @Test
     public void testBank_new() {
+        fail();
+        
         /*
-        After the refactoring of `Bank` class, this test case should pass.
+        After the refactoring of `Bank` class, delete the above line and uncomment the lines below.
+        The new test case should pass after the refactoring.
         In other words, this test case gives you hints on how to refactor the `Bank` class.
          */
 
