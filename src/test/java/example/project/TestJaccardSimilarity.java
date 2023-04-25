@@ -36,7 +36,7 @@ class TestJaccardSimilarity {
         Set<String> set1 = new HashSet<>(Arrays.asList(code_fragment1.split("\n")));
         Set<String> set2 = new HashSet<>(Arrays.asList(code_fragment2.split("\n")));
 
-        double sim = JaccardSimilarity.computeJaccardSimilarity(set1, set2);
-        assertEquals(0.75, sim);
+        double similarity = JaccardSimilarity.computeJaccardSimilarity(set1, set2);
+        assertEquals(0.75, similarity);
     }
 }

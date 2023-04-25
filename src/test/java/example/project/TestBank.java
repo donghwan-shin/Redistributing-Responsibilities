@@ -12,7 +12,7 @@ public class TestBank {
     @Test
     public void testBank_org() {
         /*
-        Consider this as a client code that uses the Bank class.
+        Consider this as a "client" code that uses the Bank class.
         The Bank class is a God Class that has too many responsibilities.
         Therefore, we should refactor this class by moving behaviours closer to the data they manipulate.
         At the same time, we must update the client code accordingly. See `testBank_new()` below.
