@@ -6,6 +6,7 @@ import example.project.GodClassExample.Branch;
 import example.project.GodClassExample.Customer;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class TestBank {
 
