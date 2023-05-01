@@ -45,25 +45,10 @@ public class Bank {
         branches.add(branch);
     }
 
-    // TODO: move this method to Branch class
-    public void changeOpeningTime(Branch branch, String openingTime) {
-        branch.setOpeningTime(openingTime);
-    }
-
-    // TODO: move this method to Branch class
-    public void registerTelephone(Branch branch, String telephone) {
-        branch.setTelephone(telephone);
-    }
-
     // This method should not be moved to BankAccount/Customer class. Why not? Please think about it.
     public void setUpNewAccount(BankAccount account, Customer customer) {
         accounts.add(account);
         customers.add(customer);
-    }
-
-    // TODO: move this method to BankAccount class
-    public double obtainBalance(BankAccount account) {
-        return account.getBalance();
     }
 
     // This method should not be moved to BankAccount class. Why not? Please think about it.
@@ -72,22 +57,18 @@ public class Bank {
         accounts.remove(account);
     }
 
-    // TODO: move this method to BankAccount class
-    public void addInterest(BankAccount account) {
-        double interest = account.getInterest();
-        double value = account.getBalance() * interest;
-        account.setBalance(account.getBalance() + value);
-    }
-
     // This method should not be moved to Branch class. Why not? Please think about it.
     public void closeBranch(Branch branch) {
         branch.setOpeningTime("null");
         branches.remove(branch);
     }
 
-    // TODO: remove navigation code
     public void changePayrollProcessingDate(String date, String staffCategory) {
-        payroll.getStaffCategoryPaySchedule(staffCategory).payDay = date; // TODO: remove this navigation code
+        payroll.changePayDay(staffCategory, date);
+    }
+
+    public String getPayrollProcessingDate(String staffCategory) {
+        return payroll.getPayDay(staffCategory);
     }
 
 }
